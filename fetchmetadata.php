@@ -29,7 +29,7 @@ class PlgSystemFetchMetadata extends CMSPlugin
 	protected $app;
 
 	/**
-	 * Listener for the `onAfterInitialise` event
+	 * Reject cross-origin requests to protect from CSRF, XSSI, and other bugs
 	 *
 	 * @return  void
 	 *
