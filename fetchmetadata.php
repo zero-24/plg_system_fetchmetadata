@@ -42,19 +42,19 @@ class PlgSystemFetchMetadata extends CMSPlugin
 		// Allow requests from browsers which don't send Fetch Metadata
 		if (!isset($headers['sec-fetch-site']))
 		{
-			return true;
+			return;
 		}
 
 		// Allow same-site and browser initiated requests
 		if (in_array($headers['sec-fetch-site'],  ['same-origin', 'same-site', 'none']))
 		{
-			return true;
+			return;
 		}
 
 		// Allow simple top-level navigation from anywhere.
-		if ($headers['sec-fetch-mode'] === 'navigate' && requestMethod === 'GET')
+		if ($headers['sec-fetch-mode'] === 'navigate' && $this->app->input->server->get('REQUEST_METHOD', 'unknown', 'cmd') === 'GET')
 		{
-			return  true;
+			return;
 		}
 
 		// Block all other requests
