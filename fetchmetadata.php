@@ -53,7 +53,7 @@ class PlgSystemFetchMetadata extends CMSPlugin
 
 		// Allow simple top-level navigation from anywhere, <object> and <embed> send navigation requests, which we disallow.
 		if ($headers['sec-fetch-mode'] === 'navigate'
-			&& $this->app->input->server->get('REQUEST_METHOD', 'unknown', 'cmd') === 'GET'
+			&& $this->app->input->server->get('REQUEST_METHOD', '', 'cmd') === 'GET'
 			&& !in_array($headers['sec-fetch-dest'], ['object', 'embed']))
 		{
 			return;
