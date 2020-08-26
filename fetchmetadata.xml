@@ -16,4 +16,25 @@
 	<updateservers>
 		<server type="extension" name="FetchMetadata Update Site">https://raw.githubusercontent.com/zero-24/plg_system_fetchmetadata/master/update.xml</server>
 	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="cors_endpoints"
+					type="subform"
+					label="PLG_SYSTEM_FETCHMETADATA_CORS_ENDPOINTS"
+					description="PLG_SYSTEM_FETCHMETADATA_CORS_ENDPOINTS_DESC"
+					multiple="true"
+				>
+					<form>
+						<field
+							name="rule"
+							type="text"
+							label="PLG_SYSTEM_FETCHMETADATA_CORS_ENDPOINT_RULE"
+						/>
+					</form>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
 </extension>

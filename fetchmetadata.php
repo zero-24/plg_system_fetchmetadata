@@ -60,9 +60,24 @@ class PlgSystemFetchMetadata extends CMSPlugin
 		}
 
 		// Opt out endpoints that are meant to serve cross-site traffic (Optional)
-		if (in_array($this->app->input->server->get('REQUEST_URI', '', 'string'), $this->params->get('cors_endpoints', [])))
+		$requestUri = $this->app->input->server->get('REQUEST_URI', '', 'string');
+
+		foreach ($this->params->get('cors_endpoints', []) as $corsEndpoint)
 		{
-			return;
+			if (empty($corsEndpoint->rule))
+			{
+				continue;
+			}
+
+			if (preg_match($corsEndpoint->rule, $requestUri))
+			{
+				return;
+			}
+
+			if ($requestUri === $corsEndpoint->rule)
+			{
+				return;
+			}
 		}
 
 		// Reject all other requests that are cross-site and not navigational
