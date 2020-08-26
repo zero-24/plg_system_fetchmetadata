@@ -14,7 +14,7 @@ use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Response\JsonResponse;
 
 /**
- * Plugin class for Http Header
+ * Plugin class for Fetch Metadata
  *
  * @since  1.0
  */
