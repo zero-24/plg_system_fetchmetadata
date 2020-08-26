@@ -1,6 +1,6 @@
 # FetchMetadata Plugin
 
-This Joomla Plugin helps to protect your sites by using [Fetch Metadata Request Headers](https://web.dev/fetch-metadata/) [w3c-spec](https://www.w3.org/TR/fetch-metadata/)
+This Joomla Plugin helps to protect your sites by using [Fetch Metadata Request Headers](https://web.dev/fetch-metadata/) ([w3c-spec](https://www.w3.org/TR/fetch-metadata/))
 
 ## Sponsoring and Donation
 
