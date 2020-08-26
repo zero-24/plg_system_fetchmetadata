@@ -65,7 +65,7 @@ class PlgSystemFetchMetadata extends CMSPlugin
 			return;
 		}
 
-		// Block all other requests
+		// Reject all other requests that are cross-site and not navigational
 		$this->app->enqueueMessage(Text::_('JINVALID_TOKEN'), 'error');
 		echo new JsonResponse;
 		$this->app->close();
