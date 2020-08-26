@@ -12,7 +12,7 @@
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/zero-24/plg_system_fetchmetadata/releases/download/1.0.0/plg_system_fetchmetadata.zip</downloadurl>
 		</downloads>
-		<sha512>096e69315980547d9f05637d1357e6be5ffddf302b313674ea58e9b6214beb089fcc6fb9f1df5e6ffcdd4f9b19bd12c146fad675a3eb35888bee4fc034f0fdc5</sha512>
+		<sha512>51d7d51023b1c5e1811d1d23c131b23edbdc0b7d5877236ad84e9cb056f861a946d907634365b57a85d5ab60ec3f2c5f7cee9c36deebeddb8876d7e13cf9f04b</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>
@@ -33,7 +33,7 @@
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/zero-24/plg_system_fetchmetadata/releases/download/1.0.0/plg_system_fetchmetadata.zip</downloadurl>
 		</downloads>
-		<sha512>096e69315980547d9f05637d1357e6be5ffddf302b313674ea58e9b6214beb089fcc6fb9f1df5e6ffcdd4f9b19bd12c146fad675a3eb35888bee4fc034f0fdc5</sha512>
+		<sha512>51d7d51023b1c5e1811d1d23c131b23edbdc0b7d5877236ad84e9cb056f861a946d907634365b57a85d5ab60ec3f2c5f7cee9c36deebeddb8876d7e13cf9f04b</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>
