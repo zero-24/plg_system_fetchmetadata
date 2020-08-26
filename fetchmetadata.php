@@ -59,6 +59,12 @@ class PlgSystemFetchMetadata extends CMSPlugin
 			return;
 		}
 
+		// Opt out endpoints that are meant to serve cross-site traffic (Optional)
+		if (in_array($this->app->input->server->get('REQUEST_URI', '', 'string'), $this->params->get('cors_endpoints', [])))
+		{
+			return;
+		}
+
 		// Block all other requests
 		$this->app->enqueueMessage(Text::_('JINVALID_TOKEN'), 'error');
 		echo new JsonResponse;
