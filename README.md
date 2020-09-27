@@ -27,9 +27,9 @@ The implemened rules are:
 
 ### Initial setup the plugin
 
-- Download the latest version of the plugin: https://github.com/zero-24/plg_system_fetchmetadata/releases/latest
-- Install the plugin using Upload & Install
-- Enable the plugin form the plugin manager
+- [Download the latest version of the plugin](https://github.com/zero-24/plg_system_fetchmetadata/releases/latest)
+- Install the plugin using `Upload & Install`
+- Enable the plugin `System - FetchMetadata` form the plugin manager
 
 Now the inital setup is completed.
 
@@ -49,7 +49,7 @@ You want to translate this extension to your own language? Check out my [Crowdin
 
 ## Beyond this repo
 
-This plugin is intended as backport for an upcomming PR against the core CMS.
+This plugin is intended as backport for an upcomming PR against the core CMS 4.1.
 
 ## Joomla! Extensions Directory (JED)
 
