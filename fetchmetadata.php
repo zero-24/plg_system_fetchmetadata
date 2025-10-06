@@ -21,14 +21,6 @@ use Joomla\CMS\Response\JsonResponse;
 class PlgSystemFetchMetadata extends CMSPlugin
 {
 	/**
-	 * Application object.
-	 *
-	 * @var    CMSApplication
-	 * @since  1.0
-	 */
-	protected $app;
-
-	/**
 	 * Reject cross-origin requests to protect from CSRF, XSSI, and other bugs
 	 *
 	 * @return  void
@@ -53,14 +45,14 @@ class PlgSystemFetchMetadata extends CMSPlugin
 
 		// Allow simple top-level navigation from anywhere, <object> and <embed> send navigation requests, which we disallow.
 		if ($headers['sec-fetch-mode'] === 'navigate'
-			&& $this->app->input->server->get('REQUEST_METHOD', '', 'cmd') === 'GET'
+			&& $this->getApplication()->input->server->get('REQUEST_METHOD', '', 'cmd') === 'GET'
 			&& !in_array($headers['sec-fetch-dest'], ['object', 'embed']))
 		{
 			return;
 		}
 
 		// Opt out endpoints that are meant to serve cross-site traffic (Optional)
-		$requestUri = $this->app->input->server->get('REQUEST_URI', '', 'string');
+		$requestUri = $this->getApplication()->input->server->get('REQUEST_URI', '', 'string');
 
 		foreach ($this->params->get('cors_endpoints', []) as $corsEndpoint)
 		{
@@ -81,8 +73,8 @@ class PlgSystemFetchMetadata extends CMSPlugin
 		}
 
 		// Reject all other requests that are cross-site and not navigational
-		$this->app->enqueueMessage(Text::_('JINVALID_TOKEN'), 'error');
+		$this->getApplication()->enqueueMessage(Text::_('JINVALID_TOKEN'), 'error');
 		echo new JsonResponse;
-		$this->app->close();
+		$this->getApplication()->close();
 	}
 }
