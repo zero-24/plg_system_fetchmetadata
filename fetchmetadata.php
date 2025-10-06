@@ -45,14 +45,14 @@ class PlgSystemFetchMetadata extends CMSPlugin
 
 		// Allow simple top-level navigation from anywhere, <object> and <embed> send navigation requests, which we disallow.
 		if ($headers['sec-fetch-mode'] === 'navigate'
-			&& $this->getApplication()->input->server->get('REQUEST_METHOD', '', 'cmd') === 'GET'
+			&& $this->getApplication()->getInput()->server->get('REQUEST_METHOD', '', 'cmd') === 'GET'
 			&& !in_array($headers['sec-fetch-dest'], ['object', 'embed']))
 		{
 			return;
 		}
 
 		// Opt out endpoints that are meant to serve cross-site traffic (Optional)
-		$requestUri = $this->getApplication()->input->server->get('REQUEST_URI', '', 'string');
+		$requestUri = $this->getApplication()->getInput()->server->get('REQUEST_URI', '', 'string');
 
 		foreach ($this->params->get('cors_endpoints', []) as $corsEndpoint)
 		{
